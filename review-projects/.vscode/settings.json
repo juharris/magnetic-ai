@@ -1,0 +1,9 @@
+{
+	"cSpell.words": [
+		"Hackathon"
+	],
+	"[python]": {
+		"editor.formatOnSave": false
+	},
+	"python.terminal.activateEnvironment": true
+}
