@@ -3,7 +3,7 @@
 		"Hackathon"
 	],
 	"[python]": {
-		"editor.formatOnSave": false
+		"editor.formatOnSave": true
 	},
 	"python.terminal.activateEnvironment": true,
 	"json.validate.enable": true,

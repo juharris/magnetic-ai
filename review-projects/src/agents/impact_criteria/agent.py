@@ -4,7 +4,6 @@ from google.adk.agents import Agent
 # model = "gemini-2.5-flash"
 model = "gemini-2.5-flash-lite"
 
-
 impact_criteria_agent = Agent(
     name="impact_criteria_agent",
     model=model,
