@@ -1,8 +1,23 @@
+import json
+import os
+
 from google.adk.agents import Agent
 
-# Models: https://ai.google.dev/gemini-api/docs/models
-# model = "gemini-2.5-flash"
-model = "gemini-2.5-flash-lite"
+from optify import OptionsProvider
+
+path_to_current_dir = os.path.dirname(os.path.abspath(__file__))
+provider = OptionsProvider.build(os.path.join(path_to_current_dir, '../../../config'))
+
+features = [
+    "tools",
+]
+
+root_agent_config_json = provider.get_options_json('root_agent', features)
+config = json.loads(root_agent_config_json)
+print(config)
+
+model = config['agent_model']
+
 
 root_agent = Agent(
     name="root_agent",

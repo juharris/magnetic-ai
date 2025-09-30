@@ -1,0 +1,42 @@
+options:
+  root_agent:
+    # Models: https://ai.google.dev/gemini-api/docs/models
+    agent_model: 'gemini-2.5-flash-lite'
+    tools:
+      - category: "Technical Excellence"
+        weight: 0.25
+        details: |-
+          Robust, working code; reliability; ability to demo end-to-end.
+      
+      - category: "Solution Architecture & Documentation"
+        weight: 0.25
+        details: |-
+          Clear structure, maintainable repo, install/setup steps, README clarity, inline docs that make it reproducible & extensible.
+      
+      - category: "Gemini Integration"
+        weight: 0.25
+        details: |-
+          Depth + creativity of Gemini usage (multimodal? tool calling? chaining? prompts? eval loops?). Effective API use over hype.
+      
+      - category: "Impact & Innovation"
+        weight: 0.25
+        details: |-
+          Does it solve a meaningful problem? Unlock a new pattern? Show a powerful personal/local workflow others could adopt?
+      
+      - category: "Human-In-The-Loop"
+        weight: 0.05
+        bonus: true
+        details: |-
+          The Human Feedback Foundation loves to see agents interact with humans as part of the agent system.
+      
+      - category: "Use Google Agent Development Kit"
+        weight: 0.05
+        bonus: true
+        details: |-
+          Use Google Agent Development Kit https://google.github.io/adk-docs/#
+      
+      - category: "Use Google Vertex AI Agent Engine"
+        weight: 0.05
+        bonus: true
+        details: |-
+          Use Google Vertex AI Agent Engine https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview
