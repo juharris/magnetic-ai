@@ -1,3 +1,5 @@
+imports:
+  - google_search_tool
 options:
   root_agent:
     # Models: https://ai.google.dev/gemini-api/docs/models
@@ -7,7 +9,7 @@ options:
     instruction: |-
       You evaluate hackathon projects and rate them based on a set of criteria.
 
-      Use the GitHub tool to find information about the project and search their source code.
+      Use the Google Search tool to find information about the project and search their source code.
 
       Use tools to score points based on the criteria.
       For each category, give the score and briefly explain why you gave that score.

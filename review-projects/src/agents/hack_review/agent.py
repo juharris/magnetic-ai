@@ -5,16 +5,16 @@ from google.adk.agents import Agent
 from google.adk.agents.llm_agent import ToolUnion
 from google.adk.tools.mcp_tool.mcp_session_manager import StreamableHTTPConnectionParams
 from google.adk.tools.mcp_tool.mcp_toolset import McpToolset
-# from google.adk.tools import google_search
+from google.adk.tools import google_search
 
-from optify import OptionsProvider
+from optify import OptionsWatcher
 
 path_to_current_dir = os.path.dirname(os.path.abspath(__file__))
-provider = OptionsProvider.build(os.path.join(
+provider = OptionsWatcher.build(os.path.join(
     path_to_current_dir, '../../../config'))
 
 features = [
-    "tools",
+    "root_agent",
 ]
 
 root_agent_config_json = provider.get_options_json('root_agent', features)
@@ -32,10 +32,21 @@ gh_tool = McpToolset(
     )
 )
 
-tools: list[ToolUnion] = [
-    gh_tool,
-    # google_search,
-]
+
+def get_tools() -> list[ToolUnion]:
+    result = []
+    configured_tools = config['tools']
+    for tool_name, is_enabled in configured_tools.items():
+        if is_enabled:
+            match tool_name:
+                case 'google_search':
+                    result.append(google_search)
+                case 'GitHub':
+                    result.append(gh_tool)
+    return result
+
+
+tools = get_tools()
 
 projects = [
     {
@@ -45,9 +56,10 @@ projects = [
 ]
 
 print("Making agent with model: ", model)
+print("Tools: ", tools)
 
 root_agent = Agent(
-    name="root_agent",
+    name="project_review_agent",
     model=model,
     description=config['description'],
     instruction=config['instruction'],

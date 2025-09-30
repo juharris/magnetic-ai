@@ -13,11 +13,11 @@
 #### Command Line
 
 ```shell
-uv run adk run src/agents/hack_review  
+uv run adk run src/agents/hack_review
 ```
 
 #### Web
 
 ```shell
-uv run adk web src/agents
+uv  run adk web --reload --reload_agents src/agents
 ```
