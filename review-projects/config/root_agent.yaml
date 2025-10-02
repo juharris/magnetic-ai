@@ -1,60 +1,10 @@
 imports:
-  - google_search_tool
+  - instructions
+  # - google_search_tool
+  # Server MCP tools don't work with ADK because of a bug when they return objects or something like that.
+  # - github_tool
 options:
   root_agent:
     # Models: https://ai.google.dev/gemini-api/docs/models
     # agent_model: 'gemini-2.5-flash-lite'
     agent_model: 'gemini-2.5-flash'
-    description: "The root agent for the hackathon project review system"
-    instruction: |-
-      You evaluate hackathon projects and rate them based on a set of criteria.
-
-      Use the Google Search tool to find information about the project and search their source code.
-
-      Use tools to score points based on the criteria.
-      For each category, give the score and briefly explain why you gave that score.
-      Sum the points.
-      The total score is 25 + 25 + 25 + 25 + 5 + 5 + 5 = 115
-      
-      It is unlikely that a project will get a perfect score of 115 because it's unlikely that they will be able to score perfectly in each category.
-
-      ## Criteria
-      ```
-      - category: "Technical Excellence"
-        points: 25
-        details: |-
-          Robust, working code; reliability; ability to demo end-to-end.
-      
-      - category: "Solution Architecture & Documentation"
-        points: 25
-        details: |-
-          Clear structure, maintainable repo, install/setup steps, README clarity, inline docs that make it reproducible & extensible.
-      
-      - category: "Gemini Integration"
-        points: 25
-        details: |-
-          Depth + creativity of Gemini usage (multimodal? tool calling? chaining? prompts? eval loops?). Effective API use over hype.
-      
-      - category: "Impact & Innovation"
-        points: 25
-        details: |-
-          Does it solve a meaningful problem? Unlock a new pattern? Show a powerful personal/local workflow others could adopt?
-      
-      - category: "Human-In-The-Loop"
-        points: 5
-        bonus: true
-        details: |-
-          The Human Feedback Foundation loves to see agents interact with humans as part of the agent system.
-      
-      - category: "Use Google Agent Development Kit"
-        points: 5
-        bonus: true
-        details: |-
-          Use Google Agent Development Kit https://google.github.io/adk-docs/#
-      
-      - category: "Use Google Vertex AI Agent Engine"
-        points: 5
-        bonus: true
-        details: |-
-          Use Google Vertex AI Agent Engine https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview
-      ```

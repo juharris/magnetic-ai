@@ -1,0 +1,6 @@
+# Enables Google Search tool
+# https://google.github.io/adk-docs/tools/built-in-tools/#google-search
+options:
+  root_agent:
+    tools:
+      GitHub: true

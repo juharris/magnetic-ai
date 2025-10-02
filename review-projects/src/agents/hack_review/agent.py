@@ -21,27 +21,28 @@ root_agent_config_json = provider.get_options_json('root_agent', features)
 config = json.loads(root_agent_config_json)
 
 model = config['agent_model']
-gh_mcp_pat = os.environ.get('GH_PAT')
-
-gh_tool = McpToolset(
-    connection_params=StreamableHTTPConnectionParams(
-        url='https://api.githubcopilot.com/mcp/',
-        headers={
-            "Authorization": f"Bearer {gh_mcp_pat}"
-        }
-    )
-)
 
 
 def get_tools() -> list[ToolUnion]:
     result = []
-    configured_tools = config['tools']
+    configured_tools = config.get('tools', {})
     for tool_name, is_enabled in configured_tools.items():
         if is_enabled:
             match tool_name:
                 case 'google_search':
                     result.append(google_search)
                 case 'GitHub':
+                    gh_mcp_pat = os.environ.get('GH_PAT')
+
+                    gh_tool = McpToolset(
+                        connection_params=StreamableHTTPConnectionParams(
+                            url='https://api.githubcopilot.com/mcp/',
+                            headers={
+                                "Authorization": f"Bearer {gh_mcp_pat}"
+                            }
+                        )
+                    )
+
                     result.append(gh_tool)
     return result
 
@@ -55,8 +56,8 @@ projects = [
     },
 ]
 
-print("Making agent with model: ", model)
-print("Tools: ", tools)
+print("Making agent with model:", model)
+print(f"Tools ({len(tools)}):", tools)
 
 root_agent = Agent(
     name="project_review_agent",
