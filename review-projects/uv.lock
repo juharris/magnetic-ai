@@ -1182,15 +1182,15 @@ wheels = [
 
 [[package]]
 name = "optify"
-version = "0.7.0"
+version = "0.8.0"
 source = { registry = "https://pkgs.shopify.io/basic/data/python/simple/" }
-sdist = { url = "https://files.pythonhosted.org/packages/93/7e/62f54035a2cc4cf3fa739ea21f8285de8c62053891e315e650b2cba854b4/optify-0.7.0.tar.gz", hash = "sha256:356dd9cdf2d9885c97e35b00866ade7c873d3744f7aaf82fed9a34741e1dcd9a", size = 36232, upload-time = "2025-08-17T01:10:30.521Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2a/a0/6b69a2cf65ec5b8f025867dea383d708215fdfc8b2f4f69a8a7d100743de/optify-0.8.0.tar.gz", hash = "sha256:b6772dda7ae30725be9e0eba4ca8739045f87826d29d51d7817fc5134ea26b87", size = 46855, upload-time = "2025-10-02T02:46:18.182Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cc/5d/c7b8b491f8db84ed632e88e3180d4702f7d67f8e0cb7d9a1786abceed45b/optify-0.7.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:218598e94e5f60057e792784fa853c33e773e9e06e36c73016662a6659d3c6f5", size = 3087808, upload-time = "2025-08-17T01:10:28.99Z" },
-    { url = "https://files.pythonhosted.org/packages/16/3f/5c53e94cb3062bd0ba5244b620e86e9c45e74e2a98f75e6512ec4cce461b/optify-0.7.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1ea348e7aee55c23d6d20a3e7c93d34b5c75af0ed8645ea731992ce485352170", size = 3451626, upload-time = "2025-08-17T01:09:54.741Z" },
-    { url = "https://files.pythonhosted.org/packages/bb/0e/34bc9a361dc31c7380ccc5f5a5d8bcdb490cdc176b8b102f5b6711732e26/optify-0.7.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d310ff25b23dbe1730f7fa0e9a5de0acd7283697091745adecd013f0e38cbb79", size = 3552388, upload-time = "2025-08-17T01:10:13.668Z" },
-    { url = "https://files.pythonhosted.org/packages/aa/2c/101a287bf7f473fa1aa2bbcd3774c0fb2d86b166a8767615d0181450ffd8/optify-0.7.0-cp313-cp313-win_amd64.whl", hash = "sha256:c1a5b3d81c3329426bd633275e3689a918140ffefdc2a54ce17ec4e71c897b24", size = 2859563, upload-time = "2025-08-17T01:10:37.378Z" },
-    { url = "https://files.pythonhosted.org/packages/1c/93/3dd3a1a2c0e7ac0407368256542fe387cdffa1ae862f341b194b5a03a0a7/optify-0.7.0-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:8f7aadde7072ab30928c8a1f3714bad5b938397c9c3a2fe365bb40b57b603aef", size = 3451224, upload-time = "2025-08-17T01:09:56.782Z" },
+    { url = "https://files.pythonhosted.org/packages/95/a0/93938f0071113d968316261a36ae68cde2e686fc60f24204510281818128/optify-0.8.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:2fe7a67e30adf3a544bc55b3f20d0c50c13e64f7e7eb83a60c6f3752feda59b1", size = 3664498, upload-time = "2025-10-02T02:46:16.752Z" },
+    { url = "https://files.pythonhosted.org/packages/4f/d8/9c92146f79632188947d3a4690344c491da994e31b5cde70c7d540eb1b4b/optify-0.8.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e58237e44d403c80487ce8e39cbcafb9940c5ced4022f01258663499a310a2a4", size = 4100185, upload-time = "2025-10-02T02:45:48.271Z" },
+    { url = "https://files.pythonhosted.org/packages/37/39/fbc661c78c722fc137ca1cd872f90603b4f522f74866df070da210687826/optify-0.8.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6a7ffe363a08a624391d2fe881b4d0c0030568ddd3dd9dcbd6251cab25d69f22", size = 4087762, upload-time = "2025-10-02T02:46:07.703Z" },
+    { url = "https://files.pythonhosted.org/packages/f4/a3/422d38b8d13cd37d1e9a6e15f21bfe34f61e3f2866282a1314fc36d04cea/optify-0.8.0-cp313-cp313-win_amd64.whl", hash = "sha256:b2c7ef6d0586cda7017f90a4c066ab1994907b00a9c32b0161080871039613ae", size = 3361233, upload-time = "2025-10-02T02:46:23.186Z" },
+    { url = "https://files.pythonhosted.org/packages/d4/43/cedb7b7d36d505b47cc4561d999acc887cdcae404cff79eedcaf82bf29b0/optify-0.8.0-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:36550beb003bed3ed3eb0fd472735094182ec79692f5aa8d0e37e71161910578", size = 4101495, upload-time = "2025-10-02T02:45:53.072Z" },
 ]
 
 [[package]]
@@ -1443,7 +1443,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "google-adk", specifier = ">=1.15.1" },
-    { name = "optify", specifier = ">=0.7.0" },
+    { name = "optify", specifier = ">=0.8.0" },
 ]
 
 [[package]]

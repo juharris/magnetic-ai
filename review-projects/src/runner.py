@@ -26,7 +26,8 @@ async def call_agent_async(query):
 
     async for event in events:
         if event.is_final_response():
-            final_response = event.content.parts[0].text
+            # Was `final_response = event.content.parts[0].text`, but it's not clear what `content` is.
+            final_response = event.content
             print("Agent Response: ", final_response)
 
 # Note: In Colab, you can directly use 'await' at the top level.
