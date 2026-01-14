@@ -4,9 +4,14 @@ use serde::Deserialize;
 use std::collections::HashMap;
 
 #[derive(Debug, Clone, Deserialize)]
+pub struct ModelConfig {
+    pub name: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
 pub struct AgentConfig {
     pub name: String,
-    pub model: String,
+    pub model: ModelConfig,
     pub system_instructions: String,
 }
 

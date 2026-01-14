@@ -4,7 +4,8 @@ options:
   agents:
     writer:
       name: Writer
-      model: llama3.2
+      model:
+        name: llama3.2
       system_instructions:
         $type: Optify.ConfigurableString
         base:

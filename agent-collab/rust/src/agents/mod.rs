@@ -1,3 +1,5 @@
+mod agent;
 mod config;
 
-pub use config::{AgentConfig, get_agents};
+pub use agent::Agent;
+pub use config::{AgentConfig, ModelConfig, get_agents};

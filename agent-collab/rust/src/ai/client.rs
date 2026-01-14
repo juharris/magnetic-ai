@@ -1,11 +1,18 @@
+use crate::agents::ModelConfig;
 use genai::Client;
 use genai::chat::printer::{PrintChatStreamOptions, print_chat_stream};
 use genai::chat::{ChatMessage, ChatRequest};
 
-#[derive(Clone, Default)]
-pub struct Ai {}
+#[derive(Clone)]
+pub struct Ai {
+    model_config: ModelConfig,
+}
 
 impl Ai {
+    pub const fn new(model_config: ModelConfig) -> Self {
+        Self { model_config }
+    }
+
     fn get_client(&self) -> genai::Client {
         Client::default()
     }
@@ -17,17 +24,15 @@ impl Ai {
         ])
     }
 
-    fn get_model(&self) -> String {
-        let model = "llama3.2";
-        // let model = "phi3";
-        model.to_owned()
+    fn get_model(&self) -> &str {
+        &self.model_config.name
     }
 
     pub async fn send(&self, message: &str) -> Result<String, Box<dyn std::error::Error>> {
         let client = self.get_client();
 
         let chat_request = self.create_request(message);
-        let model = &self.get_model();
+        let model = self.get_model();
         let response = client.exec_chat(model, chat_request, None).await?;
         let content = response.first_text().expect("should be a text response");
 
@@ -38,7 +43,7 @@ impl Ai {
         let client = self.get_client();
 
         let chat_request = self.create_request(message);
-        let model = &self.get_model();
+        let model = self.get_model();
 
         let stream = client.exec_chat_stream(model, chat_request, None).await?;
         let print_options = PrintChatStreamOptions::from_print_events(false);
