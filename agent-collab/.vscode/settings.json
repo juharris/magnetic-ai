@@ -1,0 +1,21 @@
+{
+	"files.readonlyInclude": {
+		"**/.cargo/registry/src/**/*.rs": true,
+		"**/lib/rustlib/src/rust/library/**/*.rs": true
+	},
+	"[json]": {
+		"editor.formatOnSave": true
+	},
+	"[rust]": {
+		"editor.formatOnSave": true
+	},
+	"[yaml]": {
+	 "editor.formatOnSave": true
+	},
+	"cSpell.words": [
+		"collab",
+		"genai"
+	],
+	"json.validate.enable": true,
+	"json.schemaDownload.enable": true
+}

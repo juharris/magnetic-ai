@@ -1,0 +1,22 @@
+[package]
+name = "agent_collab"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "A project using the genai crate for multi-provider AI interactions"
+license = "MIT"
+repository = "https://github.com/juharris/magnetic-ai"
+
+[dependencies]
+genai = "0.5"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
