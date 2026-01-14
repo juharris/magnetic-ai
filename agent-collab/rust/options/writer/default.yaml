@@ -1,0 +1,12 @@
+# Writer agent configuration
+
+options:
+  agents:
+    writer:
+      name: Writer
+      model: llama3.2
+      system_instructions:
+        $type: Optify.ConfigurableString
+        base:
+          file: writer/system_instructions.liquid
+        arguments: {}

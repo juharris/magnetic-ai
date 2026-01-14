@@ -1,0 +1,12 @@
+# Researcher agent configuration
+
+options:
+  agents:
+    researcher:
+      name: Researcher
+      model: llama3.2
+      system_instructions:
+        $type: Optify.ConfigurableString
+        base:
+          file: researcher/system_instructions.liquid
+        arguments: {}

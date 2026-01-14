@@ -7,7 +7,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .send("What is the capital of France and what was the president's name in 2020?")
         .await
         .unwrap();
-    println!("Answer: {}", content);
+    println!("Answer: {content}");
 
     println!();
     println!("Streaming:");

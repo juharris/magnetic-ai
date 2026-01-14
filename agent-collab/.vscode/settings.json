@@ -10,12 +10,26 @@
 		"editor.formatOnSave": true
 	},
 	"[yaml]": {
-	 "editor.formatOnSave": true
+		"editor.formatOnSave": true
 	},
 	"cSpell.words": [
 		"collab",
-		"genai"
+		"genai",
+		"optify"
 	],
 	"json.validate.enable": true,
-	"json.schemaDownload.enable": true
+	"json.schemaDownload.enable": true,
+	"json.schemas": [
+		{
+			"fileMatch": [
+				"rust/options/**/*.json"
+			],
+			"url": "https://raw.githubusercontent.com/juharris/optify/refs/heads/main/schemas/feature_file.json"
+		}
+	],
+	"yaml.schemas": {
+		"https://raw.githubusercontent.com/juharris/optify/refs/heads/main/schemas/feature_file.json": [
+			"rust/options/**/*.{yaml,yml}"
+		]
+	}
 }

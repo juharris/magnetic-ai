@@ -1,0 +1,5 @@
+# Configuration for AI agents used in collaboration
+
+imports:
+  - researcher/default
+  - writer/default
