@@ -1,0 +1,15 @@
+# Initializer agent configuration
+# Seeds the shared state with initial structure from a goal or prompt
+
+options:
+  agents:
+    initializer:
+      name: Initializer
+      model:
+        name: llama3.2
+      capabilities:
+        - initialize
+      system_instructions:
+        $type: Optify.ConfigurableString
+        base:
+          file: initializer/system_instructions.liquid

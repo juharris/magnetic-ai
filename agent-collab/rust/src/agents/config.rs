@@ -3,6 +3,30 @@ use optify::provider::{GetOptionsPreferences, OptionsRegistry};
 use serde::Deserialize;
 use std::collections::HashMap;
 
+/// Defines what an agent can do when examining shared state.
+/// Agents may have multiple capabilities and decide whether to act on each turn.
+///
+/// Future consideration: Agents could "bid" based on how much they can contribute,
+/// allowing dynamic turn ordering based on state relevance.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum Capability {
+    /// Can create initial state structure from a prompt/goal
+    Initialize,
+    /// Can add information to existing fields without changing schema
+    Augment,
+    /// Can summarize/compress state to prevent unbounded growth
+    Summarize,
+    /// Can restructure state, define new schema, reorganize
+    Restructure,
+    /// Can find unexpected connections across state sections - the "flash of genius"
+    Serendipity,
+    /// Can evaluate state and mark items as validated/rejected
+    Evaluate,
+    /// Can declare state "complete" for a phase or goal
+    Finalize,
+}
+
 #[derive(Debug, Clone, Deserialize)]
 pub struct ModelConfig {
     pub name: String,
@@ -12,6 +36,7 @@ pub struct ModelConfig {
 pub struct AgentConfig {
     pub name: String,
     pub model: ModelConfig,
+    pub capabilities: Vec<Capability>,
     pub system_instructions: String,
 }
 

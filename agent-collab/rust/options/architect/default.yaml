@@ -1,0 +1,16 @@
+# Architect agent configuration
+# Restructures state schema as understanding evolves
+
+options:
+  agents:
+    architect:
+      name: Architect
+      model:
+        name: llama3.2
+      capabilities:
+        - restructure
+        - evaluate
+      system_instructions:
+        $type: Optify.ConfigurableString
+        base:
+          file: architect/system_instructions.liquid

@@ -1,5 +1,9 @@
 # Configuration for AI agents used in collaboration
+# Each agent has capabilities that define how they can interact with shared state
 
 imports:
+  - initializer/default
   - researcher/default
+  - architect/default
+  - serendipity/default
   - writer/default

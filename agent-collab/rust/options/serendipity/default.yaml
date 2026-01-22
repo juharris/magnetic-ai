@@ -1,0 +1,16 @@
+# Serendipity agent configuration
+# Finds unexpected connections - the "flash of genius"
+
+options:
+  agents:
+    serendipity:
+      name: Serendipity
+      model:
+        name: llama3.2
+      capabilities:
+        - serendipity
+        - augment
+      system_instructions:
+        $type: Optify.ConfigurableString
+        base:
+          file: serendipity/system_instructions.liquid
